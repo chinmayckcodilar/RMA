@@ -4,7 +4,6 @@
 	$reasons = $this->getReasons();
 	$conditions = $this->getConditions();
 	$status = $this->getStatusByOrderId($id);
-	print_r($status);
 ?>
 
 <div id="orderInfo">
@@ -75,6 +74,7 @@
 							</select>
 						</div>
 					</div>
+
 					<?php else:?>
 						<div class="rma-reason-condition">
 							<?php $rmaObj = $this->getAvailableRma($orderItem['id'])?>
@@ -88,6 +88,10 @@
 							<dl>
 								<dt><?php echo __('Condition :')?></dt>
 								<dd><?php echo $rmaObj->getCondition();?></dd>
+							</dl>
+							<dl>
+								<dt><?php echo __('Status :')?></dt>
+								<dd><?php echo $status?></dd>
 							</dl>
 							<dl style="display: none;">
 								<dt><?php echo __('Qty :')?></dt>

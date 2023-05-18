@@ -49,7 +49,7 @@ class StatusRepository implements StatusRepositoryInterface
         $this->statusFactory = $statusFactory;
         $this->statusResource = $statusResource;
         $this->collectionProcessor = $collectionProcessor;
-        $this->searchResultsFactory = $searchResultsFactory;
+        // $this->searchResultsFactory = $searchResultsFactory;
     }
 
     /**
@@ -115,8 +115,8 @@ class StatusRepository implements StatusRepositoryInterface
     */
     public function getList(SearchCriteriaInterface $searchCriteria)
     {
-        $searchResults = $this->searchResultsFactory->create();
-        $searchResults->setSearchCriteria($searchCriteria);
+        // $searchResults = $this->searchResultsFactory->create();
+        // $searchResults->setSearchCriteria($searchCriteria);
         $collection = $this->statusFactory->create()->getCollection();
         $this->collectionProcessor->process($searchCriteria, $collection);
     

@@ -12,8 +12,9 @@ interface StatusInterface
      * Constants for keys of data array.
      */
     const STATUS_ID = 'status_id';
-    const NAME = 'name';
-    const CODE = 'code';
+    const TITLE = 'title';
+    const CREATEDAT = 'created_at';
+    const UPDATEDAT = 'updated_at';
 
     /**
      * Get Status ID.
@@ -31,32 +32,47 @@ interface StatusInterface
     public function setStatusId($statusId);
 
     /**
-     * Get Status Name.
+     * Get Status Title.
      *
      * @return string|null
      */
-    public function getName();
+    public function getTitle();
 
     /**
-     * Set Status Name.
+     * Set Status Title.
      *
-     * @param string $name
+     * @param string $title
      * @return $this
      */
-    public function setName($name);
+    public function setTitle($title);
 
     /**
-     * Get Status Code.
+     * Get Created At.
      *
      * @return string|null
      */
-    public function getCode();
+    public function getCreatedAt();
 
     /**
-     * Set Status Code.
+     * Set Created At.
      *
-     * @param string $code
+     * @param string $createdAt
      * @return $this
      */
-    public function setCode($code);
+    public function setCreatedAt($createdAt);
+
+    /**
+     * Get Updated At.
+     *
+     * @return string|null
+     */
+    public function getUpdatedAt();
+
+     /**
+     * Set Updated At.
+     *
+     * @param string $updatedAt
+     * @return $this
+     */
+    public function setUpdatedAt($updatedAt);
 }

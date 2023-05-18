@@ -125,11 +125,13 @@ public function getList(SearchCriteriaInterface $searchCriteria)
 
 public function getByOrderId($orderId)
 {
-    $rma = $this->rmaFactory->create();
-        $rma->addFieldToFilter('order_id', $orderId);
-        if (!$rma->getEntityId()) {
-            throw new NoSuchEntityException(__('RMA with order ID "%1" does not exist.', $orderId));
-        }
+    $rma = $this->rmaFactory->create()->load($orderId,'order_id');
+    // print_r($rma->getData());
+    // die();
+    //     $rma->addFieldToFilter('order_id', $orderId);
+    //     if (!$rma->getEntityId()) {
+    //         throw new NoSuchEntityException(__('RMA with order ID "%1" does not exist.', $orderId));
+    //     }
         return $rma;
 }
 }

@@ -56,4 +56,15 @@ interface OrderRepositoryInterface
      * @throws LocalizedException
      */
     public function getList(SearchCriteriaInterface $searchCriteria);
+
+    /**
+     * Get Status by order id.
+     *
+     * @param int $orderId
+     * @return OrderInterface
+     * @throws NoSuchEntityException
+     */
+    public function getStatusByOrderId($orderId);
+
+
 }

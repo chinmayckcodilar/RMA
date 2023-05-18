@@ -13,7 +13,9 @@ class Generate extends \Magento\Framework\View\Element\Template
 		\Codilar\Rma\Model\ReasonFactory $modelReasonFactory,
 		\Codilar\Rma\Model\ConditionFactory $modelConditionFactory,
 		\Codilar\Rma\Model\RmaFactory $modelRmaFactory,
-		\Codilar\Rma\Api\RmaRepositoryInterface $rmaRepository
+		\Codilar\Rma\Api\RmaRepositoryInterface $rmaRepository,
+		\Codilar\Rma\Api\OrderRepositoryInterface $orderRepository,
+		\Codilar\Rma\Api\StatusRepositoryInterface $status
 	){
 		$this->order = $order;
 		$this->rma = $rma;
@@ -25,6 +27,8 @@ class Generate extends \Magento\Framework\View\Element\Template
 		$this->_modelConditionFactory = $modelConditionFactory;
 		$this->_modelRmaFactory = $modelRmaFactory;
 		$this->rmaRepository = $rmaRepository;
+		$this->orderRepository = $orderRepository;
+		$this->_status = $status;
 		parent::__construct($context);
 	}
 	public function getImage($product, $imageId, $attributes = [])
@@ -101,8 +105,9 @@ class Generate extends \Magento\Framework\View\Element\Template
 
 	public function getStatusByOrderId($orderId)
 	{
-		$data = $this->rmaRepository->getByOrderId($orderId);
-		return $data->getCondition();
+		$data = $this->orderRepository->getStatusByOrderId($orderId);
+		$statusId = $data->getStatus();
+		return $this->_status->getById($statusId)->getTitle();
 	}
 
 }

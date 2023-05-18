@@ -142,4 +142,15 @@ public function getList(SearchCriteriaInterface $searchCriteria)
 
     return $searchResults;
 }
+
+ /**
+     * Get Status by order id.
+     *
+     * @param int $orderId
+     * @return OrderInterface
+     * @throws NoSuchEntityException
+     */
+    public function getStatusByOrderId($orderId){
+        return $this->orderFactory->create()->load($orderId,'order_id');
+    }
 }

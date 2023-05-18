@@ -66,9 +66,19 @@
 
     <preference for="Codilar\Rma\Api\Data\ConditionInterface" type="Codilar\Rma\Model\Condition" />
 
- <preference for="Codilar\Rma\Api\RmaRepositoryInterface" type="Codilar\Rma\Model\RmaRepository" />
+    <preference for="Codilar\Rma\Api\RmaRepositoryInterface" type="Codilar\Rma\Model\RmaRepository" />
 
     <preference for="Codilar\Rma\Api\Data\RmaInterface" type="Codilar\Rma\Model\Rma" />
+
+    <preference for="Codilar\Rma\Api\OrderRepositoryInterface" type="Codilar\Rma\Model\OrderRepository" />
+
+    <preference for="Codilar\Rma\Api\Data\OrderInterface" type="Codilar\Rma\Model\Order" />
+
+    <preference for="Codilar\Rma\Api\StatusRepositoryInterface" type="Codilar\Rma\Model\StatusRepository" />
+
+    <preference for="Codilar\Rma\Api\Data\StatusInterface" type="Codilar\Rma\Model\Status" />
+
+
 
 
 </config>

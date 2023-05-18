@@ -16,15 +16,16 @@ interface RmaInterface
     const ITEM_ID = 'item_id';
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
+
     /**
-     * Get Condition ID.
+     * Get Rma ID.
      *
      * @return int|null
      */
     public function getRmaId();
 
     /**
-     * Set Condition ID.
+     * Set Rma ID.
      *
      * @param int $id
      * @return $this
@@ -32,32 +33,109 @@ interface RmaInterface
     public function setRmaId($id);
 
     /**
-     * Get Condition name.
+     * Get Order id.
      *
-     * @return string|null
+     * @return int|null
      */
     public function getOrderId();
 
     /**
-     * Set Condition name.
+     * Set Order id.
      *
-     * @param string $name
+     * @param int $orderId
      * @return $this
      */
-    public function setOrderId($order_id);
+    public function setOrderId($orderId);
 
     /**
-     * Get additional data associated with the Condition.
+     * Get Quantity.
+     *
+     * @return int|null
+     */
+    public function getQtyReturn();
+
+    /**
+     * Set Quantity.
+     *
+     * @param int $qtyReturn
+     * @return $this
+     */
+    public function setQtyReturn($qtyReturn);
+
+    /**
+     * Get Reason.
      *
      * @return string|null
      */
-    public function getAdditionalData();
+    public function getReason();
 
     /**
-     * Set additional data associated with the Condition.
+     * Set Reason.
      *
-     * @param string $additionalData
+     * @param string $reason
      * @return $this
      */
-    public function setAdditionalData($additionalData);
+    public function setReason($reason);
+
+    /**
+     * Get Condition.
+     *
+     * @return string|null
+     */
+    public function getCondition();
+
+    /**
+     * Set Condition.
+     *
+     * @param string $condition
+     * @return $this
+     */
+    public function setCondition($condition);
+
+    /**
+     * Get Item id.
+     *
+     * @return int|null
+     */
+    public function getItemId();
+
+    /**
+     * Set Item id.
+     *
+     * @param int $itemId
+     * @return $this
+     */
+    public function setItemId($itemId);
+
+    /**
+     * Get Created at.
+     *
+     * @return string|null
+     */
+    public function getCreatedAt();
+
+    /**
+     * Set Created at.
+     *
+     * @param string $createdAt
+     * @return $this
+     */
+    public function setCreatedAt($createdAt);
+
+    /**
+     * Get Updated at.
+     *
+     * @return string|null
+     */
+    public function getUpdatedAt();
+
+    /**
+     * Set Updated at.
+     *
+     * @param string $updatedAt
+     * @return $this
+     */
+    public function setUpdatedAt($updatedAt);
+
+
 }
