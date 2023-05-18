@@ -6,7 +6,7 @@
 			<block class="Codilar\Rma\Block\Adminhtml\Status\Edit\Tabs" name="codilar_status_edit_tabs"/>
 		</referenceContainer>
 		<referenceContainer name="content">
-			<block class="	\Rma\Block\Adminhtml\Status\Edit" name="codilar_status_items_edit"/>
+			<block class="Codilar\Rma\Block\Adminhtml\Status\Edit" name="codilar_status_items_edit"/>
 		</referenceContainer>
 	</body>
 </page>

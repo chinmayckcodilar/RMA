@@ -4,6 +4,7 @@
 	$reasons = $this->getReasons();
 	$conditions = $this->getConditions();
 	$status = $this->getStatusByOrderId($id);
+
 ?>
 
 <div id="orderInfo">
@@ -91,7 +92,7 @@
 							</dl>
 							<dl>
 								<dt><?php echo __('Status :')?></dt>
-								<dd><?php echo $status?></dd>
+								<dd><?php if($status){echo $status;} else{echo 'Pending';}?></dd>
 							</dl>
 							<dl style="display: none;">
 								<dt><?php echo __('Qty :')?></dt>

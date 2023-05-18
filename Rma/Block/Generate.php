@@ -106,8 +106,14 @@ class Generate extends \Magento\Framework\View\Element\Template
 	public function getStatusByOrderId($orderId)
 	{
 		$data = $this->orderRepository->getStatusByOrderId($orderId);
-		$statusId = $data->getStatus();
-		return $this->_status->getById($statusId)->getTitle();
+		if ($data->getData())
+		{
+			$statusId = $data->getStatus();
+			if($statusId) {
+				return $this->_status->getById($statusId)->getTitle();
+			}
+		}
+		return false;
 	}
 
 }

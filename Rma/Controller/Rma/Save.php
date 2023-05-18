@@ -21,8 +21,6 @@ class Save extends \Magento\Framework\App\Action\Action
 	{
 		try{
 			$data = $this->getRequest()->getPostValue();
-			print_r($data,true);
-			die();
 			$params = array();
 			$resultRedirect = $this->resultRedirectFactory->create();
 			if(isset($data['check'])){
